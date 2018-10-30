@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <link type="text/css" rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div id="guideNameInput">
+        <form>
+            <input id="nameOfGuide" type="text" placeholder="Name of the guide">
+            <button id="buttonName" type="button" onclick="getGuideTitle()">Submit</button>
+        </form>
+    </div>
+    <div id="fixedDiv">
+        <p id="resultName"></p>
+        <div id="timer"></div>
+        <button id="buttonFinish" type="button" onclick="finishGuide()">Finish</button>
+        <button id="buttonStart" type="button" onclick="startTimer()">Start</button>
+    </div>
+    <div id="popupBox" class="popup">
+        <div class="popupContent">
+            <div class="popupHeader">
+                <span class="close" onclick="closePopUp()">&times;</span>
+                <p id="headerContent">Hey! Listen!</p>
+            </div>
+            <div class="popupBody">
+                <p id="bodyContent"></p>
+                <div id="btnHolder">
+                    <button id="booleanYes" class="btnBoolean" type="button" onclick="trueBtnClick()">Yes</button>
+                    <span></span>
+                    <button id="booleanNo" class="btnBoolean" type="button" onclick="falseBtnClick()">No</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="guideHolder">
+    <div class="sectionNameInput">
+        <input class="nameOfSection" type="text" placeholder="Name of the section">
+        <button class="buttonSection" type="button" onclick="getSectionName()">Submit</button>
+        <p class="resultSection"></p>
+        <p class="timeStamp"></p>
+    </div>
+    <div class="columnButtons">
+        <button class="btnColumnAdd" type="button" onclick="addColumnDisplay()">Add Column</button>
+        <span></span>
+        <button class="btnColumnDelete" type="button" onclick="removeColumnDisplay()">Delete Column</button>
+        <span></span>
+        <button class="btnClone" type="button" onclick="appendGuide()">Add Section</button>
+    </div>
+    <div class="formHolder">
+        <form class="columns1">
+            <textarea class="txtGuide" maxlength="75"></textarea>
+            <p class="columnInput"></p>
+            <textarea class="txtGuide" maxlength="75"></textarea>
+            <p class="columnInput"></p>
+            <textarea class="txtGuide" maxlength="75"></textarea>
+            <p class="columnInput"></p>
+            <textarea class="txtGuide" maxlength="75"></textarea>
+            <p class="columnInput"></p>
+            <textarea class="txtGuide" maxlength="75"></textarea>
+            <p class="columnInput"></p>
+            <textarea class="txtGuide" maxlength="75"></textarea>
+            <p class="columnInput"></p>
+            <textarea class="txtGuide" maxlength="75"></textarea>
+            <p class="columnInput"></p>
+        </form>
+        <form class="columns2">
+            <textarea class="txtGuide" maxlength="75"></textarea>
+            <p class="columnInput"></p>
+            <textarea class="txtGuide" maxlength="75"></textarea>
+            <p class="columnInput"></p>
+            <textarea class="txtGuide" maxlength="75"></textarea>
+            <p class="columnInput"></p>
+            <textarea class="txtGuide" maxlength="75"></textarea>
+            <p class="columnInput"></p>
+            <textarea class="txtGuide" maxlength="75"></textarea>
+            <p class="columnInput"></p>
+            <textarea class="txtGuide" maxlength="75"></textarea>
+            <p class="columnInput"></p>
+            <textarea class="txtGuide" maxlength="75"></textarea>
+            <p class="columnInput"></p>
+        </form>
+        <form class="columns3">
+            <textarea class="txtGuide" maxlength="75"></textarea>
+            <p class="columnInput"></p>
+            <textarea class="txtGuide" maxlength="75"></textarea>
+            <p class="columnInput"></p>
+            <textarea class="txtGuide" maxlength="75"></textarea>
+            <p class="columnInput"></p>
+            <textarea class="txtGuide" maxlength="75"></textarea>
+            <p class="columnInput"></p>
+            <textarea class="txtGuide" maxlength="75"></textarea>
+            <p class="columnInput"></p>
+            <textarea class="txtGuide" maxlength="75"></textarea>
+            <p class="columnInput"></p>
+            <textarea class="txtGuide" maxlength="75"></textarea>
+            <p class="columnInput"></p>
+        </form>
+    </div>
+        <p class="scrollPoint"></p>
+    </div>
+    <script src="js/scripts.js"></script>
+    <script>
+        window.addEventListener("keydown", keyPress, false);
+        document.onload = cloneGuide();
+    </script>
+</body>
+</html>

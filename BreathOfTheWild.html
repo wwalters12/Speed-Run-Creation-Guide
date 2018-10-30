@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<!-- saved from url=(0085)http://localhost:63342/DynamicGuide/dynamicGuide.html?_ijt=o4j16boi6ur6tq2up3998tbq0r -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <title>Title</title>
+
+    <link type="text/css" rel="stylesheet" href="example%20files/styles.css">
+</head>
+<body>
+<div id="guideNameInput">
+    <form>
+        <input id="nameOfGuide" type="text" placeholder="Name of the guide" style="display: none">
+        <button id="buttonName" type="button" onclick="getGuideTitle()" style="display: none">Submit</button>
+    </form>
+</div>
+<div id="fixedDiv">
+    <p id="resultName">Breath of the Wild Any%</p>
+    <div id="timer"></div>
+    <button id="buttonFinish" type="button" onclick="finishGuide()" style="display: none;">Finish</button>
+    <button id="buttonStart" type="button" onclick="startTimer()" style="display: inline;">Start</button>
+</div>
+<div id="popupBox" class="popup" style="display: none;">
+    <div class="popupContent">
+        <div class="popupHeader">
+            <span class="close" onclick="closePopUp()">×</span>
+            <p id="headerContent">Hey! Listen!</p>
+        </div>
+        <div class="popupBody">
+            <p id="bodyContent">Are you sure you want to finish the guide? This will be permanent</p>
+            <div id="btnHolder">
+                <button id="booleanYes" class="btnBoolean" type="button" onclick="trueBtnClick()" style="display: inline;">Yes</button>
+                <span></span>
+                <button id="booleanNo" class="btnBoolean" type="button" onclick="falseBtnClick()" style="display: inline;">No</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="guideHolder">
+    <div class="sectionNameInput">
+        <input class="nameOfSection" type="text" placeholder="Name of the section" style="display: none">
+        <button class="buttonSection" type="button" onclick="getSectionName()" style="display: none">Submit</button>
+        <p class="resultSection">Plataeu</p>
+        <p class="timeStamp"></p>
+    </div>
+    <div class="columnButtons" style="display: none">
+        <button class="btnColumnAdd" type="button" onclick="addColumnDisplay()">Add Column</button>
+        <span></span>
+        <button class="btnColumnDelete" type="button" onclick="removeColumnDisplay()">Delete Column</button>
+        <span></span>
+        <button class="btnClone" type="button" onclick="appendGuide()">Add Section</button>
+    </div>
+    <div class="formHolder">
+        <form class="columns1" style="display: flex;">
+            <textarea class="txtGuide" maxlength="75" style="display: none"></textarea>
+            <p class="columnInput" style="display: inline">Skip cutscene</p>
+            <textarea class="txtGuide" maxlength="75" style="display: none"></textarea>
+            <p class="columnInput" style="display: inline">Leave Shrine of resurrection</p>
+            <textarea class="txtGuide" maxlength="75" style="display: none"></textarea>
+            <p class="columnInput" style="display: inline">Crouch Jump towards trees in front of you and grab 2 Bladed Rhino Beetles</p>
+            <textarea class="txtGuide" maxlength="75" style="display: none"></textarea>
+            <p class="columnInput" style="display: inline">Run down hill using Whistle Sprinting</p>
+            <textarea class="txtGuide" maxlength="75" style="display: none"></textarea>
+            <p class="columnInput" style="display: inline">Run Past old man and grab the Axe</p>
+            <textarea class="txtGuide" maxlength="75" style="display: none"></textarea>
+            <p class="columnInput" style="display: inline">Progress towards the tower marked and pick up Hyrule Herbs on the way</p>
+            <textarea class="txtGuide" maxlength="75" style="display: none"></textarea>
+            <p class="columnInput" style="display: inline">Hit the Bokoblin in front of the cave until you can pick up its sheild</p>
+        </form>
+        <form class="columns2" style="display: flex;">
+            <textarea class="txtGuide" maxlength="75" style="display: none"></textarea>
+            <p class="columnInput" style="display: inline">Activate the tower</p>
+            <textarea class="txtGuide" maxlength="75" style="display: none"></textarea>
+            <p class="columnInput" style="display: inline">Jump off the tower in front and use Fall Damage Prevention to survive</p>
+            <textarea class="txtGuide" maxlength="75" style="display: none"></textarea>
+            <p class="columnInput" style="display: inline">King Cutscene</p>
+            <textarea class="txtGuide" maxlength="75" style="display: none"></textarea>
+            <p class="columnInput" style="display: inline">Head to Ja Baij Shrine south east of the tower (climb wall to dodge guard)</p>
+            <textarea class="txtGuide" maxlength="75" style="display: none"></textarea>
+            <p class="columnInput" style="display: inline">Ja Baij Shrine</p>
+            <textarea class="txtGuide" maxlength="75" style="display: none"></textarea>
+            <p class="columnInput" style="display: inline">King Cutscene 2</p>
+            <textarea class="txtGuide" maxlength="75" style="display: none"></textarea>
+            <p class="columnInput" style="display: inline">Warp to Great Plateau Tower</p>
+        </form>
+        <form class="columns3" style="display: flex;">
+            <textarea class="txtGuide" maxlength="75" style="display: none"></textarea>
+            <p class="columnInput" style="display: inline">Jump off the tower north and use Fall Damage Prevention to survie</p>
+            <textarea class="txtGuide" maxlength="75" style="display: none"></textarea>
+            <p class="columnInput" style="display: inline">Jump into the water and use a Shield High Jump to get farther without swim</p>
+            <textarea class="txtGuide" maxlength="75" style="display: none"></textarea>
+            <p class="columnInput" style="display: inline">Run up to Oman Au Shrine</p>
+            <textarea class="txtGuide" maxlength="75" style="display: none"></textarea>
+            <p class="columnInput" style="display: inline">Warp back to shrine of resurrection </p>
+            <textarea class="txtGuide" maxlength="75" style="display: none"></textarea>
+            <p class="columnInput" style="display: inline">Leave the shrine heading left, grab the mushrooms</p>
+            <textarea class="txtGuide" maxlength="75" style="display: none"></textarea>
+            <p class="columnInput" style="display: inline">Whistle Sprint up the mountain on the small ledge</p>
+            <textarea class="txtGuide" maxlength="75" style="display: none"></textarea>
+            <p class="columnInput" style="display: inline">Sheildsurf don the hillside and sheildsurf jump across the bridge</p>
+        </form>
+    </div>
+    <p class="scrollPoint"></p>
+</div>
+<script src="js/scripts.js"></script>
+<script>
+    window.addEventListener("keydown", keyPress, false);
+    document.onload = cloneGuide();
+</script>
+
+
+<div class="guideHolder">
+    <div class="sectionNameInput">
+        <input class="nameOfSection" type="text" placeholder="Name of the section" style="display: none">
+        <button class="buttonSection" type="button" onclick="getSectionName()" style="display: none">Submit</button>
+        <p class="resultSection">Plateau(cont.)</p>
+        <p class="timeStamp"></p>
+    </div>
+    <div class="columnButtons" style="display: none">
+        <button class="btnColumnAdd" type="button" onclick="addColumnDisplay()">Add Column</button>
+        <span></span>
+        <button class="btnColumnDelete" type="button" onclick="removeColumnDisplay()">Delete Column</button>
+        <span></span>
+        <button class="btnClone" type="button" onclick="appendGuide()">Add Section</button>
+    </div>
+    <div class="formHolder">
+        <form class="columns1" style="display: flex;">
+            <textarea class="txtGuide" maxlength="75" style="display: none"></textarea>
+            <p class="columnInput" style="display: inline">Climb straight up the mountain to Keh Namut (use Whistle Sprinting uphill)</p>
+            <textarea class="txtGuide" maxlength="75" style="display: none"></textarea>
+            <p class="columnInput" style="display: inline">Keh Namut Shrine</p>
+            <textarea class="txtGuide" maxlength="75" style="display: none"></textarea>
+            <p class="columnInput" style="display: inline">Shield surf down the hillside</p>
+            <textarea class="txtGuide" maxlength="75" style="display: none"></textarea>
+            <p class="columnInput" style="display: inline">Sprint, shieldsurf and climb around the left side of the mountain,</p>
+            <textarea class="txtGuide" maxlength="75" style="display: none"></textarea>
+            <p class="columnInput" style="display: inline">Eat mushrooms to survive the climb</p>
+            <textarea class="txtGuide" maxlength="75" style="display: none"></textarea>
+            <p class="columnInput" style="display: inline">Get above the srine and jump down (Fall Damage Prevention)</p>
+            <textarea class="txtGuide" maxlength="75" style="display: none"></textarea>
+            <p class="columnInput" style="display: inline">Owa Daim Shrine</p>
+        </form>
+        <form class="columns2" style="display: flex;">
+            <textarea class="txtGuide" maxlength="75" style="display: none"></textarea>
+            <p class="columnInput" style="display: inline">King cutscene 3</p>
+            <textarea class="txtGuide" maxlength="75" style="display: none"></textarea>
+            <p class="columnInput" style="display: inline">Boulder Launch to Temple of TIme</p>
+            <textarea class="txtGuide" maxlength="75" style="display: none"></textarea>
+            <p class="columnInput" style="display: inline">Climb the tower and the roof</p>
+            <textarea class="txtGuide" maxlength="75" style="display: none"></textarea>
+            <p class="columnInput" style="display: inline">King cutscene 4 (skip all of it)</p>
+            <textarea class="txtGuide" maxlength="75" style="display: none"></textarea>
+            <p class="columnInput" style="display: inline">Paraglider</p>
+            <textarea class="txtGuide" maxlength="75" style="display: none"></textarea>
+            <p class="columnInput" style="display: inline">Grab soldier's bow from the chest</p>
+            <textarea class="txtGuide" maxlength="75" style="display: none"></textarea>
+            <p class="columnInput" style="display: inline">Jump out straight and paraglide towards the boulder</p>
+        </form>
+        <form class="columns3" style="display: flex;">
+            <textarea class="txtGuide" maxlength="75" style="display: none"></textarea>
+            <p class="columnInput" style="display: inline">Land around the bushes and pick up two Hyrule Herbs</p>
+            <textarea class="txtGuide" maxlength="75" style="display: none"></textarea>
+            <p class="columnInput" style="display: inline">Stasis Launch to Hyrule Field</p>
+            <textarea class="txtGuide" maxlength="75" style="display: none"></textarea>
+            <p class="columnInput" style="display: none"></p>
+            <textarea class="txtGuide" maxlength="75" style="display: none"></textarea>
+            <p class="columnInput" style="display: none"></p>
+            <textarea class="txtGuide" maxlength="75" style="display: none"></textarea>
+            <p class="columnInput" style="display: none"></p>
+            <textarea class="txtGuide" maxlength="75" style="display: none"></textarea>
+            <p class="columnInput" style="display: none"></p>
+            <textarea class="txtGuide" maxlength="75" style="display: none"></textarea>
+            <p class="columnInput" style="display: none"></p>
+        </form>
+    </div>
+    <p class="scrollPoint"></p>
+</div><div class="guideHolder">
+    <div class="sectionNameInput">
+        <input class="nameOfSection" type="text" placeholder="Name of the section" style="display: none">
+        <button class="buttonSection" type="button" onclick="getSectionName()" style="display: none">Submit</button>
+        <p class="resultSection">Hyrule Field</p>
+        <p class="timeStamp"></p>
+    </div>
+    <div class="columnButtons" style="display: none">
+        <button class="btnColumnAdd" type="button" onclick="addColumnDisplay()">Add Column</button>
+        <span></span>
+        <button class="btnColumnDelete" type="button" onclick="removeColumnDisplay()">Delete Column</button>
+        <span></span>
+        <button class="btnClone" type="button" onclick="appendGuide()">Add Section</button>
+    </div>
+    <div class="formHolder">
+        <form class="columns1" style="display: flex;">
+            <textarea class="txtGuide" maxlength="75" style="display: none"></textarea>
+            <p class="columnInput" style="display: inline">Travel towards Hyrule Castle with the Paraglider</p>
+            <textarea class="txtGuide" maxlength="75" style="display: none"></textarea>
+            <p class="columnInput" style="display: inline">Pass the small hill and land</p>
+            <textarea class="txtGuide" maxlength="75" style="display: none"></textarea>
+            <p class="columnInput" style="display: inline">Head towards the tree line and pick up 2 hearty radishes</p>
+            <textarea class="txtGuide" maxlength="75" style="display: none"></textarea>
+            <p class="columnInput" style="display: inline">Stasis Launch yourself with the trunk towards hyrule castle,</p>
+            <textarea class="txtGuide" maxlength="75" style="display: none"></textarea>
+            <p class="columnInput" style="display: inline">(Use a bomb for more height) (eat to survive after the hit)</p>
+            <textarea class="txtGuide" maxlength="75" style="display: none"></textarea>
+            <p class="columnInput" style="display: inline">Travel forward following the dirt road and land right next to the lone tree</p>
+            <textarea class="txtGuide" maxlength="75" style="display: none"></textarea>
+            <p class="columnInput" style="display: inline">Stasis Launch yourself with the trunk towards hyrule castle,</p>
+        </form>
+        <form class="columns2" style="display: flex;">
+            <textarea class="txtGuide" maxlength="75" style="display: none"></textarea>
+            <p class="columnInput" style="display: inline">(Use a bomb for more height) (eat to survive after the hit)</p>
+            <textarea class="txtGuide" maxlength="75" style="display: none"></textarea>
+            <p class="columnInput" style="display: inline">Travel forward past the banners and then land in front of the next treeline</p>
+            <textarea class="txtGuide" maxlength="75" style="display: none"></textarea>
+            <p class="columnInput" style="display: inline">Grab another hearty radish</p>
+            <textarea class="txtGuide" maxlength="75" style="display: none"></textarea>
+            <p class="columnInput" style="display: inline">Cut down the first tree on the left side of the road</p>
+            <textarea class="txtGuide" maxlength="75" style="display: none"></textarea>
+            <p class="columnInput" style="display: inline">Stasis Launch yourself with the trunk towards hyrule castle</p>
+            <textarea class="txtGuide" maxlength="75" style="display: none"></textarea>
+            <p class="columnInput" style="display: inline">(Use a bomb for more height) (eat to survive after the hit)</p>
+            <textarea class="txtGuide" maxlength="75" style="display: none"></textarea>
+            <p class="columnInput" style="display: inline">Travel towards the big pillar on the right side of Hyrule Castle and land,</p>
+        </form>
+        <form class="columns3" style="display: flex;">
+            <textarea class="txtGuide" maxlength="75" style="display: none"></textarea>
+            <p class="columnInput" style="display: inline">in front of the big metal platform on Central Hyrule Square</p>
+            <textarea class="txtGuide" maxlength="75" style="display: none"></textarea>
+            <p class="columnInput" style="display: inline">Crouch under the platform and put down a bomb next to the chest</p>
+            <textarea class="txtGuide" maxlength="75" style="display: none"></textarea>
+            <p class="columnInput" style="display: inline">Stasis Travel using the platform and jump when the platform hits its apex</p>
+            <textarea class="txtGuide" maxlength="75" style="display: none"></textarea>
+            <p class="columnInput" style="display: inline">Paraglide past the right side of the pillar and land next tot he red banner</p>
+            <textarea class="txtGuide" maxlength="75" style="display: none"></textarea>
+            <p class="columnInput" style="display: inline">Hyrule Castle cutscene</p>
+            <textarea class="txtGuide" maxlength="75" style="display: none"></textarea>
+            <p class="columnInput" style="display: none"></p>
+            <textarea class="txtGuide" maxlength="75" style="display: none"></textarea>
+            <p class="columnInput" style="display: none"></p>
+        </form>
+    </div>
+    <p class="scrollPoint"></p>
+</div><div class="guideHolder">
+    <div class="sectionNameInput">
+        <input class="nameOfSection" type="text" placeholder="Name of the section" style="display: none">
+        <button class="buttonSection" type="button" onclick="getSectionName()" style="display: none">Submit</button>
+        <p class="resultSection">Hyrule Castle</p>
+        <p class="timeStamp"></p>
+    </div>
+    <div class="columnButtons" style="display: none">
+        <button class="btnColumnAdd" type="button" onclick="addColumnDisplay()">Add Column</button>
+        <span></span>
+        <button class="btnColumnDelete" type="button" onclick="removeColumnDisplay()">Delete Column</button>
+        <span></span>
+        <button class="btnClone" type="button" onclick="appendGuide()">Add Section</button>
+    </div>
+    <div class="formHolder">
+        <form class="columns1" style="display: flex;">
+            <textarea class="txtGuide" maxlength="75" style="display: none"></textarea>
+            <p class="columnInput" style="display: inline">Climb through the window and enter the castle</p>
+            <textarea class="txtGuide" maxlength="75" style="display: none"></textarea>
+            <p class="columnInput" style="display: inline">Destroy both boxes and hope for a Banana</p>
+            <textarea class="txtGuide" maxlength="75" style="display: none"></textarea>
+            <p class="columnInput" style="display: inline">Grab the ice arrows and the banana (if one dropped)</p>
+            <textarea class="txtGuide" maxlength="75" style="display: none"></textarea>
+            <p class="columnInput" style="display: inline">Leave through door and climb the wall on the left side</p>
+            <textarea class="txtGuide" maxlength="75" style="display: none"></textarea>
+            <p class="columnInput" style="display: inline">Climb up the rock on the right side, follow the path to the right for 3 sec</p>
+            <textarea class="txtGuide" maxlength="75" style="display: none"></textarea>
+            <p class="columnInput" style="display: inline">Climb up the rest of the Wall</p>
+            <textarea class="txtGuide" maxlength="75" style="display: none"></textarea>
+            <p class="columnInput" style="display: inline">Evade the guardian beam and enter the Dining Hall on the left</p>
+        </form>
+        <form class="columns2" style="display: flex;">
+            <textarea class="txtGuide" maxlength="75" style="display: none"></textarea>
+            <p class="columnInput" style="display: inline">Grab the banana and exit left through the door to your left</p>
+            <textarea class="txtGuide" maxlength="75" style="display: none"></textarea>
+            <p class="columnInput" style="display: inline">Head straight through the hallway and blow up the wall, Get Royal Sword</p>
+            <textarea class="txtGuide" maxlength="75" style="display: none"></textarea>
+            <p class="columnInput" style="display: inline">Turn around, alert the Lizalfos by running past the left wall</p>
+            <textarea class="txtGuide" maxlength="75" style="display: none"></textarea>
+            <p class="columnInput" style="display: inline">Go trough the floor, jump over the railing and paraglide behind Moblin</p>
+            <textarea class="txtGuide" maxlength="75" style="display: none"></textarea>
+            <p class="columnInput" style="display: inline">Sneak kill the Moblin with the Royal Guard's sword</p>
+            <textarea class="txtGuide" maxlength="75" style="display: none"></textarea>
+            <p class="columnInput" style="display: inline">Grab the Bow and the sheild from the wall</p>
+            <textarea class="txtGuide" maxlength="75" style="display: none"></textarea>
+            <p class="columnInput" style="display: inline">Also grab the dropped claymore and two monster loot parts</p>
+        </form>
+        <form class="columns3" style="display: flex;">
+            <textarea class="txtGuide" maxlength="75" style="display: none"></textarea>
+            <p class="columnInput" style="display: inline">Climb back up using wooden pillar in front of you, return towards Lizalfos</p>
+            <textarea class="txtGuide" maxlength="75" style="display: none"></textarea>
+            <p class="columnInput" style="display: inline">Throw a weapon towards the wall in front of you to distract the Lizalfos</p>
+            <textarea class="txtGuide" maxlength="75" style="display: none"></textarea>
+            <p class="columnInput" style="display: inline">Sneak kill it</p>
+            <textarea class="txtGuide" maxlength="75" style="display: none"></textarea>
+            <p class="columnInput" style="display: inline">Grab its weapon and the shield and return to the Dining Hall</p>
+            <textarea class="txtGuide" maxlength="75" style="display: none"></textarea>
+            <p class="columnInput" style="display: inline">Pick up the Razorshroom and sneak towards the fireplace</p>
+            <textarea class="txtGuide" maxlength="75" style="display: none"></textarea>
+            <p class="columnInput" style="display: inline">Throw a bomb towards the wall to distract moblins, sneak attack both</p>
+            <textarea class="txtGuide" maxlength="75" style="display: none"></textarea>
+            <p class="columnInput" style="display: inline">Pick up the stone smasher from the first Moblin</p>
+        </form>
+    </div>
+    <p class="scrollPoint"></p>
+</div><div class="guideHolder">
+    <div class="sectionNameInput">
+        <input class="nameOfSection" type="text" placeholder="Name of the section" style="display: none">
+        <button class="buttonSection" type="button" onclick="getSectionName()" style="display: none">Submit</button>
+        <p class="resultSection">Hyrule Castle(cont.)</p>
+        <p class="timeStamp"></p>
+    </div>
+    <div class="columnButtons" style="display: none">
+        <button class="btnColumnAdd" type="button" onclick="addColumnDisplay()">Add Column</button>
+        <span></span>
+        <button class="btnColumnDelete" type="button" onclick="removeColumnDisplay()">Delete Column</button>
+        <span></span>
+        <button class="btnClone" type="button" onclick="appendGuide()">Add Section</button>
+    </div>
+    <div class="formHolder">
+        <form class="columns1" style="display: flex;">
+            <textarea class="txtGuide" maxlength="75" style="display: none"></textarea>
+            <p class="columnInput" style="display: inline">Use an arrow and the fire place to activate the cooking bowl</p>
+            <textarea class="txtGuide" maxlength="75" style="display: none"></textarea>
+            <p class="columnInput" style="display: inline">Use the Beetle, 2 Bananas, the Mushroom and the Moblin Heart</p>
+            <textarea class="txtGuide" maxlength="75" style="display: none"></textarea>
+            <p class="columnInput" style="display: inline">Turn around and leave through the door, jump and paraglide down stairs</p>
+            <textarea class="txtGuide" maxlength="75" style="display: none"></textarea>
+            <p class="columnInput" style="display: inline">Shoot the eye with the bow and turn left, climb the stairs</p>
+            <textarea class="txtGuide" maxlength="75" style="display: none"></textarea>
+            <p class="columnInput" style="display: inline">Shoot the second eye, grab the Thunderblade</p>
+            <textarea class="txtGuide" maxlength="75" style="display: none"></textarea>
+            <p class="columnInput" style="display: inline">Go outside, grab the bow and arrows</p>
+            <textarea class="txtGuide" maxlength="75" style="display: none"></textarea>
+            <p class="columnInput" style="display: inline">3 ancient arrows from the chest</p>
+        </form>
+        <form class="columns2" style="display: flex;">
+            <textarea class="txtGuide" maxlength="75" style="display: none"></textarea>
+            <p class="columnInput" style="display: inline">Go towards the wall right next to the entry, grab the arrows</p>
+            <textarea class="txtGuide" maxlength="75" style="display: none"></textarea>
+            <p class="columnInput" style="display: inline">Climb up the first ledge and follow the small pathway</p>
+            <textarea class="txtGuide" maxlength="75" style="display: none"></textarea>
+            <p class="columnInput" style="display: inline">Paraglide over the small gap and climb up the wall (Under the guradian)</p>
+            <textarea class="txtGuide" maxlength="75" style="display: none"></textarea>
+            <p class="columnInput" style="display: inline">Paraglide towards the gate</p>
+            <textarea class="txtGuide" maxlength="75" style="display: none"></textarea>
+            <p class="columnInput" style="display: inline">Pass the gate, stun the miniboss with an ancient arrow</p>
+            <textarea class="txtGuide" maxlength="75" style="display: none"></textarea>
+            <p class="columnInput" style="display: inline">Get 10 bomb arrows from the chest and climb out behind the chest</p>
+            <textarea class="txtGuide" maxlength="75" style="display: none"></textarea>
+            <p class="columnInput" style="display: inline">Jump over to the stone stairs, climb them all the way up</p>
+        </form>
+        <form class="columns3" style="display: flex;">
+            <textarea class="txtGuide" maxlength="75" style="display: none"></textarea>
+            <p class="columnInput" style="display: inline">Evade the guardian beam and climb the stairs right next to it</p>
+            <textarea class="txtGuide" maxlength="75" style="display: none"></textarea>
+            <p class="columnInput" style="display: inline">Attack the Moblin with the thunderblade to make it drop its wep</p>
+            <textarea class="txtGuide" maxlength="75" style="display: none"></textarea>
+            <p class="columnInput" style="display: inline">Steal the weapon and climb up next to the fireplace to get Guards bow</p>
+            <textarea class="txtGuide" maxlength="75" style="display: none"></textarea>
+            <p class="columnInput" style="display: inline">Turn around, climb onto bridge, run across into Zelda's study</p>
+            <textarea class="txtGuide" maxlength="75" style="display: none"></textarea>
+            <p class="columnInput" style="display: inline">Leave through the window and climb up the building, stop halfway and,</p>
+            <textarea class="txtGuide" maxlength="75" style="display: none"></textarea>
+            <p class="columnInput" style="display: inline">walk to the other side of the tower. Climb up the rest of the tower</p>
+            <textarea class="txtGuide" maxlength="75" style="display: none"></textarea>
+            <p class="columnInput" style="display: inline">Paraglide over on the left side to reach the throne room</p>
+        </form>
+    </div>
+    <p class="scrollPoint"></p>
+</div><div class="guideHolder">
+    <div class="sectionNameInput">
+        <input class="nameOfSection" type="text" placeholder="Name of the section" style="display: none">
+        <button class="buttonSection" type="button" onclick="getSectionName()" style="display: none">Submit</button>
+        <p class="resultSection">Ganon</p>
+        <p class="timeStamp"></p>
+    </div>
+    <div class="columnButtons" style="display: none">
+        <button class="btnColumnAdd" type="button" onclick="addColumnDisplay()">Add Column</button>
+        <span></span>
+        <button class="btnColumnDelete" type="button" onclick="removeColumnDisplay()">Delete Column</button>
+        <span></span>
+        <button class="btnClone" type="button" onclick="appendGuide()">Add Section</button>
+    </div>
+    <div class="formHolder">
+        <form class="columns1" style="display: flex;">
+            <textarea class="txtGuide" maxlength="75" style="display: none"></textarea>
+            <p class="columnInput" style="display: inline">Windblight Ganon</p>
+            <textarea class="txtGuide" maxlength="75" style="display: none"></textarea>
+            <p class="columnInput" style="display: inline">Waterblight Ganon</p>
+            <textarea class="txtGuide" maxlength="75" style="display: none"></textarea>
+            <p class="columnInput" style="display: inline">Fireblight Ganon</p>
+            <textarea class="txtGuide" maxlength="75" style="display: none"></textarea>
+            <p class="columnInput" style="display: inline">Thunderblight Ganon</p>
+            <textarea class="txtGuide" maxlength="75" style="display: none"></textarea>
+            <p class="columnInput" style="display: inline">Calamity Ganon</p>
+            <textarea class="txtGuide" maxlength="75" style="display: none"></textarea>
+            <p class="columnInput" style="display: inline">Beast Ganon</p>
+            <textarea class="txtGuide" maxlength="75" style="display: none"></textarea>
+            <p class="columnInput" style="display: inline">Done!</p>
+        </form>
+        <form class="columns2">
+            <textarea class="txtGuide" maxlength="75" style="display: none"></textarea>
+            <p class="columnInput" style="display: none"></p>
+            <textarea class="txtGuide" maxlength="75" style="display: none"></textarea>
+            <p class="columnInput" style="display: none"></p>
+            <textarea class="txtGuide" maxlength="75" style="display: none"></textarea>
+            <p class="columnInput" style="display: none"></p>
+            <textarea class="txtGuide" maxlength="75" style="display: none"></textarea>
+            <p class="columnInput" style="display: none"></p>
+            <textarea class="txtGuide" maxlength="75" style="display: none"></textarea>
+            <p class="columnInput" style="display: none"></p>
+            <textarea class="txtGuide" maxlength="75" style="display: none"></textarea>
+            <p class="columnInput" style="display: none"></p>
+            <textarea class="txtGuide" maxlength="75" style="display: none"></textarea>
+            <p class="columnInput" style="display: none"></p>
+        </form>
+        <form class="columns3">
+            <textarea class="txtGuide" maxlength="75" style="display: none"></textarea>
+            <p class="columnInput" style="display: none"></p>
+            <textarea class="txtGuide" maxlength="75" style="display: none"></textarea>
+            <p class="columnInput" style="display: none"></p>
+            <textarea class="txtGuide" maxlength="75" style="display: none"></textarea>
+            <p class="columnInput" style="display: none"></p>
+            <textarea class="txtGuide" maxlength="75" style="display: none"></textarea>
+            <p class="columnInput" style="display: none"></p>
+            <textarea class="txtGuide" maxlength="75" style="display: none"></textarea>
+            <p class="columnInput" style="display: none"></p>
+            <textarea class="txtGuide" maxlength="75" style="display: none"></textarea>
+            <p class="columnInput" style="display: none"></p>
+            <textarea class="txtGuide" maxlength="75" style="display: none"></textarea>
+            <p class="columnInput" style="display: none"></p>
+        </form>
+    </div>
+    <p class="scrollPoint"></p>
+</div></body></html>

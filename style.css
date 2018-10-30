@@ -1,0 +1,349 @@
+body {
+    background-color: #404040;
+    margin-bottom: 0;
+}
+#main {
+    text-align: center;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+h3 {
+    font-style: italic;
+}
+#title {
+    color: #FFFFFF;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-family: sans-serif;
+    font-size: 35px;
+}
+.homeBox {
+    display: inline-block;
+    color: #FFFFFF;
+    margin: 5px 15px 5px 15px;
+    font-family: sans-serif;
+    font-size: 18px;
+}
+.homeBox a:link {
+    color: #FFFFFF;
+}
+.homeBox a:visited {
+    color: #FFFFFF;
+}
+#info {
+    color: #FFFFFF;
+    font-family: sans-serif;
+    font-size: 14px;
+    font-style: italic;
+}
+#fixedDiv {
+    position: fixed;
+    text-align: center;
+    top: 0;
+    right: 0;
+    width: 200px;
+    height: 65px;
+    background-color: #555555;
+    border-bottom-left-radius: 25px;
+}
+#resultName {
+    color: #FFFFFF;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-family: sans-serif;
+    font-size: 14px;
+    text-align: center;
+}
+::-webkit-input-placeholder {
+    color: #FFFFFF;
+    text-align: center;
+}
+textarea:focus, input:focus {
+    outline: none;
+}
+#timer {
+    color: #FFFFFF;
+    margin-top: 0;
+    font-family: sans-serif;
+}
+#nameOfGuide {
+    background-color: #868685;
+    color: #FFFFFF;
+    border-radius: 8px;
+    border: none;
+    text-align: center;
+    padding: 10px 15px;
+    font-family: sans-serif;
+}
+.guideHolder {
+    height: 100%;
+    width: 100%;
+}
+.sectionNameInput {
+    text-align: center;
+    margin-top: 3%;
+}
+.nameOfSection {
+    background-color: #868685;
+    color: #FFFFFF;
+    border-radius: 8px;
+    border: none;
+    text-align: center;
+    padding: 10px 15px;
+    font-family: sans-serif;
+}
+.resultSection {
+    font-size: 22px;
+    font-weight: bold;
+    color: #FFFFFF;
+    font-family: sans-serif;
+}
+.columnButtons {
+    display: flex;
+    justify-content: center;
+}
+.btnColumnAdd {
+    background-color: #4CAF50;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    border-radius: 8px;
+    padding: 10px 15px;
+}
+.btnColumnDelete {
+    background-color: #f44336;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    border-radius: 8px;
+    padding: 10px 15px;
+}
+#buttonName {
+    background-color: #555555;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    border-radius: 8px;
+    padding: 10px 15px;
+}
+.btnClone {
+    background-color: #008CBA;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    border-radius: 8px;
+    padding: 10px 15px;
+}
+.buttonSection {
+    background-color: #555555;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    border-radius: 8px;
+    padding: 10px 15px;
+}
+#booleanYes {
+    background-color: #555555;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    border-radius: 8px;
+    padding: 10px 15px;
+    margin-bottom: 12px;
+}
+#booleanNo {
+    background-color: #555555;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    border-radius: 8px;
+    padding: 10px 15px;
+    margin-bottom: 12px;
+}
+#buttonFinish {
+    background-color: #FF5721;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    border-radius: 8px;
+    padding: 7px 15px;
+    margin-bottom: 5px;
+}
+.formHolder {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    font-size: 16px;
+}
+.columns1 {
+    display: none;
+    flex-direction: column;
+    margin-left: 20px;
+    margin-right: 20px;
+    padding-right: -20px;
+    padding-left: -20px;
+    font-size: inherit;
+}
+.columns1 > textarea {
+    width: 275px;
+    height: 45px;
+    margin: 25px 5% auto 5%;
+    resize: none;
+    background-color: #868685;
+    color: #FFFFFF;
+    border-radius: 8px;
+    border: none;
+    font-family: sans-serif;
+    font-size: inherit;
+}
+.columns2 {
+    display: none;
+    flex-direction: column;
+    margin-left: 20px;
+    margin-right: 20px;
+    padding-right: -20px;
+    padding-left: -20px;
+    font-size: inherit;
+}
+.columns2 > textarea {
+    width: 275px;
+    height: 45px;
+    margin: 25px 5% auto 5%;
+    resize: none;
+    background-color: #868685;
+    color: #FFFFFF;
+    border-radius: 8px;
+    border: none;
+    font-family: sans-serif;
+    font-size: inherit;
+}
+.columns3 {
+    display: none;
+    flex-direction: column;
+    margin-left: 20px;
+    margin-right: 20px;
+    padding-right: -20px;
+    padding-left: -20px;
+    font-size: inherit;
+}
+.columns3 > textarea {
+    width: 275px;
+    height: 45px;
+    margin: 25px 5% auto 5%;
+    resize: none;
+    background-color: #868685;
+    color: #FFFFFF;
+    border-radius: 8px;
+    border: none;
+    font-family: sans-serif;
+    font-size: inherit;
+}
+.columnInput {
+    display: none;
+    width: 275px;
+    height: 45px;
+    background-color: #868685;
+    color: #FFFFFF;
+    border-radius: 8px;
+    border: none;
+    word-wrap: break-word;
+    text-align: center;
+    font-family: sans-serif;
+    font-size: 16px;
+}
+span {
+    width: 25px;
+}
+.popup {
+    display: none;
+    position: fixed;
+    padding-top: 100px;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+}
+.popupContent {
+    position: relative;
+    background-color: #FFFFFF;
+    margin: auto;
+    padding: 0;
+    border: none;
+    width: 30%;
+    text-align: center;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s;
+}
+@-webkit-keyframes animatetop {
+    from {top: -300px; opacity: 0}
+    to {top: 0; opacity: 1;}
+}
+@keyframes animatetop {
+    from {top:-300px; opacity: 0}
+    to {top:0; opacity: 1}
+}
+.close {
+    color: #FFFFFF;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+.close:hover, .close:focus {
+    color: #FFFFFF;
+    text-decoration: none;
+    cursor: pointer;
+}
+.popupHeader {
+    padding: 2px 16px;
+    background-color: #f44336;
+    color: #FFFFFF;
+    font-family: sans-serif;
+}
+.popupBody {
+    padding: 2px 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: black;
+    background-color: #FFFFFF;
+    font-family: sans-serif;
+}
+#btnHolder {
+    display: flex;
+    justify-content: center;
+}
+.btnBoolean {
+    display: none;
+}
+.scrollPoint {
+    margin: auto;
+    margin-top: 25px;
+    width: 500px;
+    text-align: center;
+    border-bottom: solid 3px #868685;;
+}
+.timeStamp {
+    display: none;
+    margin-bottom: 14px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #FFFFFF;
+    font-family: sans-serif;
+}
+#buttonStart {
+    display: none;
+    background-color: #4CAF50;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    border-radius: 8px;
+    padding: 7px 15px;
+    margin-bottom: 5px;
+}
